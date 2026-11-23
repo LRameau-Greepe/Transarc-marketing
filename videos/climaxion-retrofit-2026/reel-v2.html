@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:M;src:url(ASSETS/fonts/montserrat-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:M;src:url(ASSETS/fonts/montserrat-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:M;src:url(ASSETS/fonts/montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:I;src:url(ASSETS/fonts/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:I;src:url(ASSETS/fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:I;src:url(ASSETS/fonts/inter-latin-700-normal.woff2);font-weight:700}
+/* tokens = public/assets/css/site.css of the website */
+:root{--navy:#072549;--blue:#164280;--blue-2:#1f5aa8;--gold:#e1b469;--orange:#e35321;--green:#739c2d;
+--ink:#0d1b2e;--text:#3a4556;--muted:#6b7585;--line:#e3e7ee;--soft:#f4f6f9;--foot:#04182f;
+--stripe:linear-gradient(90deg,#e33b1c 0 20%,#e87e08 20% 40%,#ffeb00 40% 60%,#6baf2e 60% 80%,#62c4e6 80% 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1080px;overflow:hidden;background:var(--navy)}
+.stage{position:relative;width:1080px;height:1080px;overflow:hidden;font-family:I,sans-serif;-webkit-font-smoothing:antialiased}
+.scene{position:absolute;inset:0;opacity:0}
+.pad{position:absolute;left:80px;right:80px}
+.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:60% 50%}
+/* site kicker: mini stripe + gold caps */
+.kick{display:flex;align-items:center;gap:16px;font:700 24px M;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.kick::before{content:"";width:46px;height:6px;border-radius:3px;background:var(--stripe)}
+.kick.dark{color:var(--blue)}
+.h{font:800 86px/1.04 M;letter-spacing:-.015em;color:#fff}
+.h em{font-style:normal;color:var(--gold)}
+.h.dark{color:var(--ink)}
+.lead{font:500 34px/1.45 I;color:#c9d3e2}
+.lead.dark{color:var(--text)}
+/* line mask reveal */
+.ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.ln>span{display:block}
+.logo-tl{position:absolute;left:80px;top:64px;width:210px}
+.tag{position:absolute;right:80px;top:70px;font:600 20px M;letter-spacing:.12em;text-transform:uppercase}
+/* figures row (site hero) */
+.figs{display:grid;border-top:1px solid rgba(255,255,255,.18)}
+.fig{padding:26px 34px 0 0}
+.fig+.fig{padding-left:34px;border-left:1px solid rgba(255,255,255,.18)}
+.fig small{display:block;font:500 24px I;color:#a9b6c9}
+.fig b{display:block;font:800 92px/1 M;color:#fff;margin-top:10px;letter-spacing:-.02em}
+.fig>span{display:block;font:500 26px/1.3 I;color:#dfe6f0;margin-top:10px}
+/* numbered list (site "01 Conception…") */
+.list{display:grid;gap:0;border-top:1px solid var(--line)}
+.li{display:flex;gap:26px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line);font:600 32px/1.3 I;color:var(--ink)}
+.li i{font:700 22px M;font-style:normal;color:var(--muted);width:40px}
+.card{border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(7,37,73,.18)}
+.stripe{height:10px;background:var(--stripe)}
+.chip{display:inline-flex;align-items:center;gap:14px;font:700 26px M;padding:14px 26px;border-radius:999px}
+.prog{position:absolute;left:0;bottom:0;height:8px;width:1080px;background:var(--stripe);transform-origin:left;z-index:20}
+</style></head><body>
+<div class="stage">
+
+<!-- 1 · HERO -->
+<div class="scene" id="s1">
+  <img class="cover" src="ASSETS/img/bus-vignes-1600.webp" data-kb>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,37,73,.55) 0%,rgba(7,37,73,.15) 35%,rgba(7,37,73,.92) 70%,var(--navy) 100%)"></div>
+  <img class="logo-tl a" data-at="0.1" src="ASSETS/img/logo-transarc-white.svg">
+  <div class="pad" style="bottom:110px">
+    <div class="kick a" data-at="0.3">Transition énergétique · Climaxion</div>
+    <div class="h" style="margin-top:26px"><span class="ln"><span data-ln="0.45">5 autocars</span></span><span class="ln"><span data-ln="0.6">rétrofités.</span></span><span class="ln"><span data-ln="0.75"><em>Objectif atteint.</em></span></span></div>
+    <div class="lead a" data-at="1.2" style="margin-top:26px">Lorraine Cars Géron · Meurthe-et-Moselle (54)</div>
+  </div>
+</div>
+
+<!-- 2 · LE PROGRAMME (section blanche) -->
+<div class="scene" id="s2" style="background:#fff">
+  <img class="logo-tl a" data-at="S+0.1" src="ASSETS/img/logo-transarc.svg">
+  <div class="pad" style="top:200px">
+    <div class="kick dark a" data-at="S+0.15">Le programme Climaxion</div>
+    <div class="h dark" style="margin-top:24px;font-size:60px"><span class="ln"><span data-ln="S+0.3">Un programme régional</span></span><span class="ln"><span data-ln="S+0.42">pour la transition</span></span><span class="ln"><span data-ln="S+0.54">énergétique et écologique</span></span></div>
+  </div>
+  <div class="pad" style="top:520px;display:grid;grid-template-columns:1fr 360px;gap:50px;align-items:start">
+    <div class="list">
+      <div class="li a" data-at="S+0.9"><i>01</i>Porté par la Région Grand Est et l'ADEME</div>
+      <div class="li a" data-at="S+1.15"><i>02</i>Soutient l'innovation</div>
+      <div class="li a" data-at="S+1.4"><i>03</i>Apporte une aide technique et financière</div>
+    </div>
+    <div class="card a" data-at="S+0.7"><div class="stripe"></div><img src="ASSETS/img/bus-vignoble-1600.webp" data-kb style="display:block;width:100%;height:330px;object-fit:cover"></div>
+  </div>
+</div>
+
+<!-- 3 · L'ENGAGEMENT -->
+<div class="scene" id="s3" style="background:var(--navy)">
+  <img class="logo-tl a" data-at="S+0.1" src="ASSETS/img/logo-transarc-white.svg">
+  <div class="pad" style="top:210px">
+    <div class="kick a" data-at="S+0.15">Notre engagement</div>
+    <div class="h" style="margin-top:24px;font-size:76px"><span class="ln"><span data-ln="S+0.3">Rétrofiter <em>5 autocars</em></span></span><span class="ln"><span data-ln="S+0.45">en Région Grand Est</span></span></div>
+  </div>
+  <div class="pad figs" style="top:600px;grid-template-columns:1fr 1fr">
+    <div class="fig a" data-at="S+0.8"><small>Échéance fixée</small><b id="dl" style="color:#a9b6c9;font-size:74px">31.12.2026</b><span>avant le 31 décembre</span></div>
+    <div class="fig a" data-at="S+1.5"><small style="color:var(--gold)">Objectif atteint</small><b style="color:var(--gold);font-size:74px">01.09.2026</b><span>les 5 autocars sont en service</span></div>
+  </div>
+  <div class="pad a" data-at="S+2.0" style="top:900px"><span class="chip" style="background:rgba(115,156,45,.18);color:#b9d68a"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Engagement tenu avant l'échéance</span></div>
+</div>
+
+<!-- 4 · L'ATELIER -->
+<div class="scene" id="s4">
+  <img class="cover" src="ASSETS/img/cm-flotte-800.webp" data-kb>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,37,73,.94) 0%,rgba(7,37,73,.8) 45%,rgba(7,37,73,.55) 70%,rgba(7,37,73,.95) 100%)"></div>
+  <img class="logo-tl a" data-at="S+0.1" src="ASSETS/img/logo-transarc-white.svg">
+  <div class="pad" style="top:200px">
+    <div class="kick a" data-at="S+0.15">Notre atelier de rétrofit</div>
+    <div class="h" style="margin-top:24px;font-size:72px"><span class="ln"><span data-ln="S+0.3">Un savoir-faire</span></span><span class="ln"><span data-ln="S+0.45"><em>développé en interne</em></span></span></div>
+    <div class="lead a" data-at="S+0.8" style="margin-top:22px;font-size:30px">Démontage · Carrosserie · Montage · Électrotechnique</div>
+  </div>
+  <div class="pad figs" style="top:640px;grid-template-columns:1fr 1.25fr">
+    <div class="fig a" data-at="S+1.1"><small>Équipe dédiée</small><b><span class="num" data-from="0" data-to="8" data-t="S+1.1">8</span></b><span>personnes</span></div>
+    <div class="fig a" data-at="S+1.5"><small>Délai de conversion</small><b><span class="num" data-from="0" data-to="5" data-t="S+1.5">5</span> jours</b><span>par véhicule</span></div>
+  </div>
+</div>
+
+<!-- 5 · REMERCIEMENTS (section grise) -->
+<div class="scene" id="s5" style="background:var(--soft)">
+  <img class="logo-tl a" data-at="S+0.1" src="ASSETS/img/logo-transarc.svg">
+  <div class="pad" style="top:250px">
+    <div class="kick dark a" data-at="S+0.15">Merci</div>
+    <div class="h dark" style="margin-top:24px;font-size:68px"><span class="ln"><span data-ln="S+0.3">Merci à la Région</span></span><span class="ln"><span data-ln="S+0.42">Grand Est et à l'ADEME</span></span><span class="ln"><span data-ln="S+0.54" style="color:var(--blue)">pour leur soutien.</span></span></div>
+  </div>
+  <div class="pad a" data-at="S+1.0" style="top:660px">
+    <div style="font:700 20px M;letter-spacing:.14em;color:var(--muted);text-transform:uppercase">Avec le soutien de</div>
+    <div style="display:flex;gap:18px;margin-top:20px">
+      <span class="chip" style="background:#fff;border:1px solid var(--line);color:var(--ink)">Climaxion</span>
+      <span class="chip" style="background:#fff;border:1px solid var(--line);color:var(--ink)">ADEME</span>
+      <span class="chip" style="background:#fff;border:1px solid var(--line);color:var(--ink)">Région Grand Est</span>
+    </div>
+  </div>
+</div>
+
+<!-- 6 · SIGNATURE (footer du site) -->
+<div class="scene" id="s6" style="background:var(--foot)">
+  <div style="position:absolute;left:0;right:0;top:0" class="stripe"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+    <img class="a" data-at="S+0.2" src="ASSETS/img/logo-transarc-white.svg" style="width:520px">
+    <div class="a" data-at="S+0.6" style="font:800 46px/1.2 M;color:#fff;margin-top:46px">Le transport de voyageurs,<br><span style="color:var(--gold)">au plus près des territoires</span></div>
+    <div class="a" data-at="S+1.0" style="font:600 28px M;color:#9eabc0;margin-top:40px;letter-spacing:.04em">www.transarc.fr</div>
+  </div>
+</div>
+
+<div class="prog" id="prog"></div>
+</div>
+<script>
+const T=[0,4.0,8.2,12.4,16.6,20.2], END=24, X=0.45;
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const eo=x=>1-Math.pow(1-x,4), eio=x=>x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2;
+const abs=(v,i)=>String(v).startsWith('S')?T[i]+parseFloat(v.slice(2)):+v;
+document.querySelectorAll('.scene').forEach((s,i)=>s.querySelectorAll('[data-at],[data-ln],[data-t]').forEach(el=>{
+  for(const k of ['at','ln','t']) if(el.dataset[k]!==undefined) el.dataset[k]=abs(el.dataset[k],i);}));
+function render(t){
+  document.querySelectorAll('.scene').forEach((s,i)=>{
+    const a=T[i], b=i<T.length-1?T[i+1]:END+1;
+    const fi=i===0?1:eio(cl((t-a)/X)), fo=t<b+X?1:0; // next scene fades in on top
+    s.style.opacity=Math.min(fi,fo);
+    s.style.transform=`scale(${1+0.02*(1-fi)})`;
+    const p=cl((t-a)/(b-a+X));
+    s.querySelectorAll('[data-kb]').forEach(im=>im.style.transform=`scale(${1.02+0.07*p})`);
+  });
+  document.querySelectorAll('[data-at]').forEach(el=>{const p=eo(cl((t-el.dataset.at)/0.7));el.style.opacity=p;el.style.transform=`translateY(${(1-p)*24}px)`;});
+  document.querySelectorAll('[data-ln]').forEach(el=>{const p=eo(cl((t-el.dataset.ln)/0.75));el.style.transform=`translateY(${(1-p)*105}%)`;});
+  document.querySelectorAll('.num').forEach(el=>{el.textContent=Math.round(+el.dataset.from+(el.dataset.to-el.dataset.from)*eo(cl((t-el.dataset.t)/1.0)));});
+  const dl=document.getElementById('dl'), q=cl((t-T[2]-1.6)/0.5);
+  dl.style.textDecoration=q>0?'line-through':'none'; dl.style.textDecorationColor=`rgba(227,83,33,${q})`; dl.style.textDecorationThickness='5px';
+  document.getElementById('prog').style.transform=`scaleX(${cl(t/END)})`;
+}
+render(0);
+</script>
+</body></html>
