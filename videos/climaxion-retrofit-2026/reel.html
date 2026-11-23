@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:M;src:url(ASSETS/fonts/montserrat-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:M;src:url(ASSETS/fonts/montserrat-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:M;src:url(ASSETS/fonts/montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:I;src:url(ASSETS/fonts/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:I;src:url(ASSETS/fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:I;src:url(ASSETS/fonts/inter-latin-700-normal.woff2);font-weight:700}
+:root{--navy:#072549;--ink:#0d1b2e;--blue:#164280;--gold:#e1b469;--green:#739c2d;--lime:#99ac22;--lime-soft:#c9d77a}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1080px;overflow:hidden;background:var(--navy)}
+.stage{position:relative;width:1080px;height:1080px;overflow:hidden;font-family:I,sans-serif;color:#fff}
+.scene{position:absolute;inset:0;opacity:0;background:var(--navy)}
+.cover{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover}
+.r{display:block}
+.head{position:absolute;left:60px;right:60px;top:48px;height:150px;background:#fff;border-radius:26px;display:flex;align-items:center;justify-content:center;gap:34px;box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.head .lg{display:flex;flex-direction:column;align-items:center}
+.head .lg img{width:330px}
+.head .lg small{font:700 17px M;letter-spacing:.14em;color:var(--navy);margin-top:4px}
+.head .amp{font:600 52px M;color:var(--navy)}
+.head .cx{font:700 64px M;color:var(--navy);letter-spacing:-.01em}
+.kick{font:700 34px M;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);display:flex;align-items:center;gap:22px}
+.kick::before{content:"";width:90px;height:5px;background:var(--lime);border-radius:3px}
+.kick.nobar::before{display:none}
+.t{font:700 46px/1.45 I}
+.pill{display:inline-block;background:var(--lime);color:var(--navy);font:800 46px M;padding:6px 24px;border-radius:14px}
+.circle{position:absolute;width:420px;height:420px;border-radius:50%;overflow:hidden;border:8px solid rgba(153,172,34,.35)}
+.circle img{width:100%;height:100%;object-fit:cover}
+.box{border:3px solid var(--lime);border-radius:26px;padding:30px 40px;display:grid;gap:22px}
+.box div{display:flex;align-items:center;gap:22px;font:800 40px M;letter-spacing:.04em}
+.dash{border:3px dashed var(--navy);border-radius:22px;padding:20px 30px;font:600 34px/1.25 I;color:var(--navy);background:rgba(255,255,255,.85);text-align:center;width:430px}
+.mk{position:relative;display:inline-block;padding:4px 22px;color:var(--navy)}
+.mk::before{content:"";position:absolute;inset:0;background:var(--lime-soft);border-radius:10px 26px 12px 30px;transform:scaleX(var(--s,0));transform-origin:left;z-index:-1}
+.stripe{position:absolute;left:0;right:0;bottom:0;height:12px;background:linear-gradient(90deg,#e33b1c 0 20%,#e87e08 20% 40%,#ffeb00 40% 60%,#6baf2e 60% 80%,#62c4e6 80% 100%)}
+</style></head><body>
+<div class="stage">
+
+<!-- S1 : à travers ce programme -->
+<div class="scene" id="s1">
+  <div class="circle" style="right:-70px;bottom:-80px"><img src="ASSETS/img/bus-vignes-800.webp" data-kb="1"></div>
+  <div class="head r" data-in="0"><div class="lg"><img src="ASSETS/img/logo-transarc.svg"><small>LORRAINE CARS GÉRON</small></div><span class="amp">&amp;</span><span class="cx">Climaxion</span></div>
+  <div style="position:absolute;left:80px;right:80px;top:270px">
+    <span class="r kick nobar" data-in="0.25">À travers ce programme</span>
+    <span class="r t" data-in="0.5" style="margin-top:26px">La Région Grand Est et l'ADEME<br>soutiennent notre filiale</span>
+    <span class="r" data-in="0.85" style="margin-top:14px"><span class="pill">Lorraine Cars Géron</span></span>
+    <span class="r t" data-in="1.1" style="margin-top:10px">basée en Meurthe-et-Moselle (54),</span>
+    <span class="r t" data-in="1.4" style="margin-top:6px;color:var(--lime)">dans sa transition énergétique.</span>
+  </div>
+</div>
+
+<!-- S2 : Climaxion accompagne -->
+<div class="scene" id="s2">
+  <img class="cover" src="ASSETS/img/bus-vignoble-1600.webp" data-kb="1">
+  <div style="position:absolute;inset:0;background:rgba(240,245,230,.72)"></div>
+  <div class="r" data-in="S+0.1" style="position:absolute;left:60px;right:60px;top:48px;background:#fff;border-radius:26px;padding:26px 40px;text-align:center;font:800 58px/1.1 M;color:var(--navy);box-shadow:0 14px 40px rgba(7,37,73,.18)">Climaxion <span style="color:var(--green)">accompagne</span><br>les acteurs du territoire</div>
+  <div style="position:absolute;left:60px;top:300px;width:440px">
+    <div class="r" data-in="S+0.4" style="background:var(--navy);border-radius:22px;padding:34px 34px;font:500 38px/1.35 I;color:#fff">Un programme régional <b style="font-weight:700;color:var(--lime)">engagé</b> pour la <b style="font-weight:700">transition énergétique</b> et <b style="font-weight:700">écologique</b></div>
+  </div>
+  <div style="position:absolute;right:60px;top:290px;display:grid;gap:26px">
+    <div class="r dash" data-in="S+0.8">Porté par la Région Grand Est et l'ADEME</div>
+    <div class="r dash" data-in="S+1.2">Soutenant l'innovation</div>
+    <div class="r dash" data-in="S+1.6">Apportant une aide technique et financière</div>
+  </div>
+</div>
+
+<!-- S3 : un objectif -->
+<div class="scene" id="s3">
+  <div class="circle" style="right:-90px;bottom:-110px"><img src="ASSETS/img/bus-vignes-800.webp" data-kb="1"></div>
+  <div class="head"><div class="lg"><img src="ASSETS/img/logo-transarc.svg"><small>LORRAINE CARS GÉRON</small></div><span class="amp">&amp;</span><span class="cx">Climaxion</span></div>
+  <div style="position:absolute;left:80px;right:80px;top:260px">
+    <span class="r kick" data-in="S+0.15">Un objectif</span>
+    <div class="r" data-in="S+0.4" style="display:flex;align-items:center;gap:34px;margin-top:24px">
+      <span style="font:800 250px/0.9 M;color:var(--lime)" id="n5">5</span>
+      <span style="font:800 64px/1.15 M;letter-spacing:.08em">AUTOCARS<br>RÉTROFITÉS</span>
+    </div>
+    <div class="r box" data-in="S+0.9" style="margin-top:36px;width:max-content">
+      <div><svg width="44" height="44" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>RÉGION GRAND EST</div>
+      <div><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>AVANT LE 31 DÉCEMBRE 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- S4 : objectif atteint -->
+<div class="scene" id="s4">
+  <div class="circle" style="right:-90px;bottom:-110px"><img src="ASSETS/img/bus-vignes-800.webp" data-kb="1"></div>
+  <div class="head"><div class="lg"><img src="ASSETS/img/logo-transarc.svg"><small>LORRAINE CARS GÉRON</small></div><span class="amp">&amp;</span><span class="cx">Climaxion</span></div>
+  <div style="position:absolute;left:80px;right:80px;top:260px">
+    <span class="r kick" data-in="S+0.1">Un objectif</span>
+    <div class="r" data-in="S+0.3" style="display:flex;align-items:center;gap:20px;margin-top:22px;font:800 52px M;letter-spacing:.12em">
+      <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>ATTEINT</div>
+    <span class="r t" data-in="S+0.6" style="margin-top:30px;font-size:50px">Les <span style="color:var(--lime);font-weight:700">5 autocars</span> ont été convertis<br>et mis en service au</span>
+    <span class="r" data-in="S+0.9" style="margin-top:16px;font:800 64px M;isolation:isolate"><span class="mk" id="mk">1<sup style="font-size:.5em">er</sup> septembre 2026</span></span>
+  </div>
+</div>
+
+<!-- S5 : atelier -->
+<div class="scene" id="s5">
+  <img class="cover" src="ASSETS/img/cm-flotte-800.webp" data-kb="1" style="top:auto;bottom:-3%;height:62%">
+  <div style="position:absolute;left:0;right:0;bottom:0;height:62%;background:linear-gradient(180deg,var(--navy) 0%,rgba(7,37,73,.35) 40%,rgba(7,37,73,.2) 100%)"></div>
+  <div style="position:absolute;left:70px;right:70px;top:60px">
+    <span class="r t" data-in="S+0.1" style="font:700 48px/1.35 M">Nous avons investi dans un<br>atelier rétrofit pour convertir<br><span style="color:var(--lime)">notre flotte de véhicules</span></span>
+    <div class="r" data-in="S+0.6" style="display:flex;align-items:center;gap:30px;margin-top:34px">
+      <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.6"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="9.5" r="2.3"/><circle cx="19" cy="9.5" r="2.3"/><path d="M6.5 20v-2a5.5 5.5 0 0 1 11 0v2M1 20v-1.5A3.8 3.8 0 0 1 4.5 15M23 20v-1.5A3.8 3.8 0 0 0 19.5 15"/></svg>
+      <div><div style="font:700 46px I">8 personnes dédiées</div><div style="font:500 30px I;color:#c6d3e6;margin-top:4px">Démontage · Carrosserie · Montage · Électrotechnique</div></div>
+    </div>
+  </div>
+  <div class="r" data-in="S+1.2" style="position:absolute;right:70px;bottom:80px;background:rgba(255,255,255,.94);color:var(--navy);border-radius:22px;padding:24px 34px;font:500 40px/1.3 I">Création d'<b style="font-weight:700">emplois</b> et de<br><b style="font-weight:700">compétences</b> en interne</div>
+</div>
+
+<!-- S6 : 5 jours -->
+<div class="scene" id="s6">
+  <svg style="position:absolute;right:50px;bottom:60px;opacity:.18" width="380" height="300" viewBox="0 0 24 19" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V6a2 2 0 0 1 2-2h15M17 1l3 3-3 3M21 10v3a2 2 0 0 1-2 2H4M7 18l-3-3 3-3"/></svg>
+  <div style="position:absolute;left:80px;right:80px;top:110px">
+    <span class="r kick" data-in="S+0.1">Grâce à notre expertise</span>
+    <span class="r t" data-in="S+0.35" style="margin-top:34px;font:700 54px/1.3 M">Aujourd'hui, il nous faut seulement</span>
+    <div class="r" data-in="S+0.6" style="display:flex;align-items:center;gap:40px;margin-top:10px">
+      <span id="o5" style="font:800 330px/1 M;color:var(--navy);text-shadow:6.0px 0.0px 0 var(--lime),5.8px 1.6px 0 var(--lime),5.2px 3.0px 0 var(--lime),4.2px 4.2px 0 var(--lime),3.0px 5.2px 0 var(--lime),1.6px 5.8px 0 var(--lime),0.0px 6.0px 0 var(--lime),-1.6px 5.8px 0 var(--lime),-3.0px 5.2px 0 var(--lime),-4.2px 4.2px 0 var(--lime),-5.2px 3.0px 0 var(--lime),-5.8px 1.6px 0 var(--lime),-6.0px 0.0px 0 var(--lime),-5.8px -1.6px 0 var(--lime),-5.2px -3.0px 0 var(--lime),-4.2px -4.2px 0 var(--lime),-3.0px -5.2px 0 var(--lime),-1.6px -5.8px 0 var(--lime),-0.0px -6.0px 0 var(--lime),1.6px -5.8px 0 var(--lime),3.0px -5.2px 0 var(--lime),4.2px -4.2px 0 var(--lime),5.2px -3.0px 0 var(--lime),5.8px -1.6px 0 var(--lime),0 0 30px rgba(153,172,34,.6)">5</span>
+      <span style="font:800 80px M;letter-spacing:.06em">JOURS</span>
+    </div>
+    <span class="r t" data-in="S+0.95" style="font:700 54px/1.3 M">pour convertir<br>un véhicule&nbsp;!</span>
+  </div>
+</div>
+
+<!-- S7 : remerciements -->
+<div class="scene" id="s7">
+  <img class="cover" src="ASSETS/img/bus-vignes-1600.webp" data-kb="1" style="height:84%">
+  <div class="r" data-in="S+0.3" style="position:absolute;right:60px;top:110px;background:rgba(7,37,73,.92);padding:34px 44px;border-radius:6px;border-left:10px solid var(--lime);font:600 italic 46px/1.35 I;text-align:center">Transarc remercie<br>la Région Grand Est<br>et l'ADEME<br>pour leur soutien.</div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:200px;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 64px 12px">
+    <div class="r" data-in="S+0.7"><div style="font:500 24px I;color:#6b7585">Avec le soutien de</div><div style="font:700 30px M;margin-top:6px;white-space:nowrap">Climaxion · ADEME · Région Grand Est</div></div>
+    <div class="r" data-in="S+1.0" style="text-align:center"><img src="ASSETS/img/logo-transarc.svg" style="width:300px"><div style="font:600 italic 28px I;margin-top:6px">Faire route ensemble</div></div>
+  </div>
+  <div class="stripe"></div>
+</div>
+
+</div>
+<script>
+// scene start times (s); last ends at END
+const T=[0,3.4,6.8,9.9,13.0,16.3,19.4], END=23.5, X=0.35;
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), eo=x=>1-Math.pow(1-x,3);
+// resolve "S+x" to absolute times
+document.querySelectorAll('.scene').forEach((s,i)=>s.querySelectorAll('[data-in]').forEach(el=>{
+  const v=el.dataset.in; el.dataset.at=v.startsWith('S')?T[i]+parseFloat(v.slice(2)):+v;}));
+function render(t){
+  document.querySelectorAll('.scene').forEach((s,i)=>{
+    const a=T[i], b=i<T.length-1?T[i+1]:END+1;
+    const fi=i===0?1:cl((t-a)/X), fo=cl((b+X/2-t)/X);
+    s.style.opacity=Math.min(fi,fo);
+    const p=cl((t-a)/(b-a));
+    s.querySelectorAll('[data-kb]').forEach(im=>im.style.transform=`scale(${1+0.08*p})`);
+  });
+  document.querySelectorAll('[data-at]').forEach(el=>{
+    const p=eo(cl((t-el.dataset.at)/0.5));
+    el.style.opacity=p; el.style.transform=`translateY(${(1-p)*36}px)`;
+  });
+  document.getElementById('n5').textContent=Math.max(1,Math.round(5*eo(cl((t-T[2]-0.4)/0.8))));
+  document.getElementById('mk').style.setProperty('--s',eo(cl((t-T[3]-1.2)/0.6)));
+  const o=eo(cl((t-T[5]-0.6)/0.7)); document.getElementById('o5').style.transform=`scale(${0.6+0.4*o}) rotate(${(1-o)*-12}deg)`;
+}
+render(0);
+</script>
+</body></html>
